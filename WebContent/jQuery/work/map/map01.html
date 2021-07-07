@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEM3FEmY5ecJzAkXH9TDRAs1MaXpSWtME"
+  type="text/javascript"></script> -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEM3FEmY5ecJzAkXH9TDRAs1MaXpSWtME"
+	type="text/javascript"
+></script>
+
+<script>
+	function initialize() {
+		var mapProp = {
+			center : new google.maps.LatLng(37.497975, 127.027506),
+			zoom : 18,
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("googleMap"),
+				mapProp);
+	}
+	//google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<script>
+	$(document).ready(function() {
+		$("button").click(function() {
+			//			reload();
+			initialize();
+		});
+	});
+</script>
+
+</head>
+
+<body>
+	<button>지도</button>
+	<div id="googleMap" style="width: 500px; height: 380px;"></div>
+
+</body>
+</html>

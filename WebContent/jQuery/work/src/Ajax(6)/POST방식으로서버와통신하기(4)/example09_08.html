@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$.ajax로 jsp 파일 로드하기</title>
+<style>
+td {
+  border: 1px solid gray;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.11.1.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+/*
+	- $.post() 함수는 post방식으로 서버와 통신하는 jQuery 함수이다.
+    - $.post() 함수는 서버의 welcome.jsp 페이지를 post방식으로 요청한다.
+*/
+
+$(function() {
+    $('#submit').click(function () {
+            var username = $('.username').val();	// 서버로 보낼 데이터를 입력창에서 얻어온다.
+            var sendData = 'username=' + username;  // 입력창에서 입력받은 데이터를 문자열 형식으로 변환한다.
+            
+               $.post(									// 문자열 형식의 데이터를 welcome.jsp 파일로 보낸다.
+                 	"welcome.jsp",						// 서버의 welcome.jsp 에서는 받은 데이터를 인사말을 덧붙여서 돌려준다.
+                     sendData,        
+                     function (msg) {					// 콜백함수는 서버에서 보내온 데이터를 매개변수로 얻어온다.
+                	    alert(msg);
+            	        $('#message').html(msg);			// 서버로부터 받은 데이터를 id가 message인 엘리먼트에 설정한다.
+            	        
+            	        // .html(msg); //안에 있는 태그들을 인식합니다.
+            	        // .text(msg); //안의 태그들이 하나의 문자로 인식하기때문에 태그 전체를 출력.
+                });    
+            
+            	/* $.ajax({
+            		url :"welcome.jsp",
+            		type :"post",
+            		data : {"username": username},
+            		success : function(msg){
+            			alert(msg);
+            			$('#message').html(msg);
+            		} 
+            	});  */
+            
+            return false;      
+    });
+});
+
+</script>
+</head>
+<body>
+    <form>  
+    <label> 이름을 입력하세요 : </label>  
+    <input type="text" name="username" class="username"/>  <br/>
+    <input type="button" id="submit"  value="전송"/>  
+  </form>  
+  <div id="message"></div>
+</body>
+</html>
+
+

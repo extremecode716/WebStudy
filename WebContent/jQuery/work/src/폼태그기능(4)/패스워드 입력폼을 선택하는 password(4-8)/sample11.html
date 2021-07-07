@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample11</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+
+$(function(){
+
+	$(":password").focus(function(){
+		$(this).after("<p> 패스워드는 여섯 자 이상이어야 합니다</p>");
+	}).blur(function(){
+		$("p").remove();
+	});
+
+});
+		</script>
+	</head>
+	<body>
+		패스워드：<input type="password" name="pass" />
+	</body>
+</html>

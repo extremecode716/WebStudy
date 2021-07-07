@@ -1,0 +1,52 @@
+﻿* Ajax (Asynchronous JavaScript + XML)
+  JavaScript와 XML을 이용한 비동기 통신처리를 구현하는 기술
+
+  -> JavaScript로 웹 페이지 전체를 다시 읽어 들이지 않고 서버와
+     데이터를 주고 받는 경우에 사용함.
+     JavaScript를 이용해서 서버에서 데이터를 가져와 페이지 전체의
+     갱신(refresh)없이 특정 부분만을 변경하는 것이 가능합니다.
+     이러한 처리를 가능하도록 하는 것이 Ajax입니다.
+
+     웹브라우저는 웹페이지를 표시하기 위해 서버로부터 HTML파일을 
+     가져와서 HTML을 해석한 후 화면에 뿌려줍니다.
+     예를들어 유저가 새로운 정보를 가져와 웹 페이지 전체를 갱신 
+     합니다. 이러한 프로세싱 과정, 즉 브라우저가 서버로부터 HTML을
+     읽어 들이고 해석하여 화면에 표시할 때 까지 유저는 기다리고
+     있을 수 밖에 없습니다. 하지만 Ajax를 이용하면 페이지의 일부분만
+     갱신하는 것이 가능함으로 웹사이트를 훨씬 유연하게 제작할 수 있고
+     처리 속도 향상과 유저의 사용성을 증가시킬 수 있는 장점이 있습니다.
+
+
+
+* JSON (JavaScript Object Notation)
+  - JSON은 JavaScript Object Notation 의 약어로 XML 데이터를 
+    대신하기 위해서 사용된다.
+  - JSON은 키와 값을 쌍으로 가지는 구조이다.
+  - 배열을 사용할 때는 대괄호([ ])안에 중괄호({ })를 사용하여 조합한다.
+  - jQuery에서는 JSON으로 표현한 데이터를 파일에 저장해 두었다가 
+    필요할 때 이를 로드할 수 있는  $.getJSON()함수를 제공한다.
+
+
+   - jQuery Ajax 부가 메소드
+
+    $.ajax()
+    $.get() : get 방식으로 Ajax을 수행한다.
+    $.post() : post 방식으로 Ajax을 수행한다.
+    $.getJSON() : get 방식으로 Ajax를 수행해 JSON 데이터를 가져온다.
+    $.getScript() : get 방식으로 Ajax를 수행해 Script 데이터를 
+                    가져온다.
+    $(selector).load() : Ajax를 수행한 후에 선택한 문서 객체안에 
+                             응답받을 파일(문자열)을 불러온다.    
+
+
+    $.ajax({ 
+	     url  : "전송 페이지",
+             type : "전송 방식(get, post방식),
+             data : "전송할 데이터",
+             dataType : "요청한 데이터 타입("html","xml","json","text"),
+             success : function(result){
+	        전송 성공하면 실행될 문장;
+             }
+    });
+ 
+

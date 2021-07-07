@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Document</title>
+<meta charset="utf-8" />
+<!--
+   <script src="jquery-1.6.4.min.js"></script>
+-->
+<script src="jquery-1.10.2.min.js"></script>
+<script>
+	/*
+	 $(document).ready(function(){
+	 $("p").click(function(){
+	 $(this).hide();
+	 });
+	 }); 
+	 */
+	$(function() {
+		$("p").click(function() {
+			$("p").hide();
+		});
+
+		$("button").click(function() {
+			$("p").show();
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<p>안녕 하세요</p>
+	<button type="button">출력</button>
+
+</body>
+</html>

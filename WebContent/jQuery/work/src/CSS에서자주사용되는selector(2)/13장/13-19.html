@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+	//body 태그의 자식으로 범위를 한정한 선택자
+        $(document).ready(function () {
+            $('body > *').css('color', 'red');
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>Apple</li>
+            <li>Bag</li>
+            <li>Cat</li>
+            <li>Dog</li>
+            <li>Elephant</li>
+        </ul>
+    </div>
+</body>
+</html>

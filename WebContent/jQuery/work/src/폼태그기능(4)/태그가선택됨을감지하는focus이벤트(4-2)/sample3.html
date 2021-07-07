@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample3</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+// $(셀렉터).focus(function(){
+//		셀렉터로 지정한 태그가 포커스되었을 때 실행할 문자
+// });
+
+// 폼 태그에 "입력해 주세요" 라는 문자가 회색으로 표시되고, 폼이 포커스되면
+// 회색문자가 지워지고 문자가 입력되면 검은색 문자가 입력된다.
+
+$(function(){
+
+	$("input").val("입력해 주세요").css("color","#CCC");
+
+	$("input").focus(function(){
+		$(this).val("").css("color","#000");
+	});
+
+	$("input").blur(function(){
+		if($(this).val()==""){
+			$(this).val("입력해 주세요").css("color","#CCC");
+		}
+	});
+
+});
+
+		</script>
+	</head>
+	<body>
+		이름：<input type="text" value="" />
+	</body>
+</html>

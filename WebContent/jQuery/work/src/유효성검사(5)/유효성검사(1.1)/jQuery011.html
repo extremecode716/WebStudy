@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 정의 필터 셀렉터를 이용하여 폼 요소 다루기-:button, :text, :password</title>
+
+<style type="text/css">
+div {
+	padding: 5px 5px 5px 5px
+}
+
+.item {
+	float: center;
+	width: 100px;
+}
+</style>
+
+<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$('#regBtn').click(function() {
+			invalidItem(); // 함수 호출
+			//				clearInput();
+		});
+
+		$(":reset").click(function() {
+			$("#userId").focus();
+		});
+
+		// 필수 입력 검사하는 함수
+		function invalidItem() {
+			if ($('#userId').val() == "") {
+				alert("아이디를 입력하세요.");
+				$("#userId").focus();
+				return false;
+			}
+
+			var userName = $('#userName').val();
+			if (userName == "") {
+				alert("이름을 입력하세요.");
+				$("#userName").focus();
+				return false;
+			}
+
+			if ($("#pwd").val() == "" || $("#pwdConfirm").val() == "") {
+				alert("암호를 입력하세요.");
+				return false;
+			}
+
+			if ($("#pwd").val() != $("#pwdConfirm").val()) {
+				alert("암호가 일치하지 않습니다.");
+				$("#pwdConfirm").val("").focus();
+				return false;
+			}
+			alert(userName + "님 회원 가입을 축하합니다.");
+
+		}
+
+		/*
+		 function clearInput(){
+		 $('#userId').attr('value', '');
+		 $('#userName').attr('value', '');
+		 $('#pwd').attr('value', '');
+		 $('#pwdConfirm').attr('value', '');
+		 }  
+		 */
+	});
+</script>
+</head>
+
+<body>
+	<form>
+		<div>
+			<span class="item"> 아이디 * </span>
+			<input id="userId" type="text">
+		</div>
+
+		<div>
+			<span class="item"> 이름 * </span>
+			<input id="userName" type="text">
+		</div>
+
+		<div>
+			<span class="item"> 암호 * </span>
+			<input id="pwd" type="password">
+		</div>
+
+		<div>
+			<span class="item"> 암호 확인 * </span>
+			<input id="pwdConfirm" type="password">
+		</div>
+
+		<input type="button" id="regBtn" value="회원가입">
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

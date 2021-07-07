@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+	
+</script>
+<script>
+	$(function() {
+		$("select").change(function() {
+			var c = $("select").val();
+			if (c == 1) {
+				$("#sel01").show();
+				$("#sel02").hide();
+			} else {
+				$("#sel01").hide();
+				$("#sel02").show();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<select name=sel id=sel>
+		<option value="1">1</option>
+		<option value="2">2</option>
+	</select>
+	<div id="sel01">
+		<input type=text name="id">
+	</div>
+	<div id="sel02">
+		<textarea rows=10 cols=10></textarea>
+	</div>
+</body>
+</html>

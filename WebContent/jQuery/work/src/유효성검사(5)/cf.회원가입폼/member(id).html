@@ -1,0 +1,23 @@
+<html>
+ <head>
+  <title> New Document </title>  
+	<script>
+		function check(){
+		var id = document.getElementById("id");
+
+			if(id.value == ""){
+				alert("ID를 입력 하세요");
+				id.focus();
+			}		
+		
+		}
+	</script>
+ </head>
+
+ <body>
+  <form action=send.jsp method=post>
+	ID : <input type=text id="id">
+	<input type="button" value="가입" onclick="check()">
+  </form>
+ </body>
+</html>

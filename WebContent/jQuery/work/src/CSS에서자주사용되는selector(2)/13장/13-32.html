@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .high-light {
+            background: yellow;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+	// addClass()메소드 : 문서 객체에 class속성을 추가하는 메소드
+	// cf. removeClass()메소드 : 문서 객체의 class속성을 제거하는 메소드
+
+        $(document).ready(function () {
+            $('h1').addClass('high-light');
+//			$('h1').removeClass('high-light');
+        });
+    </script>
+</head>
+<body>
+    <h1>item - 0</h1>
+    <h1>item - 1</h1>
+    <h1>item - 2</h1>
+    <h1>item - 3</h1>
+    <h1>item - 4</h1>
+</body>
+</html>

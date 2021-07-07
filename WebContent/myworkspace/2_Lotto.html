@@ -14,16 +14,16 @@
 	-->
 	<!-- Author: ExtremeCode  -->
 	<form>
-		<input type="button" id="btn-lotto" value="로또 추첨" /> 
+		<input type="button" id="btn-lotto" value="로또 추첨" />
 		<input type="text" id="text-lotto-result" placeholder="추첨번호" readonly />
 	</form>
-
 	<script>
 		window.onload = function() {
 			var Lotto = (function() {
 				function Lotto() {
 					this.btnLotto = document.getElementById('btn-lotto');
-					this.textLottoResult = document.getElementById('text-lotto-result');
+					this.textLottoResult = document
+							.getElementById('text-lotto-result');
 					this.arrLotto = new Array();
 					this.count = 0;
 				}
@@ -33,7 +33,7 @@
 					this.arrLotto.length = 0;
 					this.count = 0;
 					this.textLottoResult.value = '로또 번호 생성중~';
-					
+
 					setTimeout(this.generateLottoNumber.bind(this), 1000);
 				};
 
@@ -46,7 +46,8 @@
 					var bDuplicate;
 					do {
 						bDuplicate = false;
-						this.arrLotto[this.count] = Math.ceil(Math.random() * 45);
+						this.arrLotto[this.count] = Math
+								.ceil(Math.random() * 45);
 
 						for (var j = 0; j < this.count; ++j) {
 							if (this.arrLotto[this.count] === this.arrLotto[j]) {
@@ -55,7 +56,7 @@
 							}
 						}
 					} while (bDuplicate);
-					
+
 					++this.count;
 					this.textLottoResult.value = this.arrLotto.join(',');
 
@@ -73,9 +74,11 @@
 
 				Lotto.prototype.addEvent = function() {
 					if (this.btnLotto.addEventListener) {
-						this.btnLotto.addEventListener('click', this.btnLottoEvent.bind(this));
+						this.btnLotto.addEventListener('click',
+								this.btnLottoEvent.bind(this));
 					} else if (this.btnLotto.attachEvent) {
-						this.btnLotto.attachEvent('onClick', this.btnLottoEvent.bind(this));
+						this.btnLotto.attachEvent('onClick', this.btnLottoEvent
+								.bind(this));
 					}
 				};
 

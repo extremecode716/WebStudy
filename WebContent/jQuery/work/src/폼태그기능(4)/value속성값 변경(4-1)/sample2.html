@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample2</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+// 폼 태그의 내용을 바꾸고자 할 경우에도 val()명령을 사용할 수 
+// 있다.
+// 변경의 대상이 되는 태그를 셀렉터로 지정하고 변경하고 싶은 값은 // 괄호안에 기술한다.
+ 
+
+// 클리어 버튼(button)이 클릭되면 val("")을 실행하고 input태그의 
+// 값을 공백으로 변경하는 스크립트임.
+
+
+$(function(){
+
+	$("#con").click(function(){			// 확인
+		if($("input").val() == ""){
+			alert("값을 입력 하세요");
+			$("input").focus();
+		}		
+	});
+
+	$("#cancel").click(function(){	  // 클리어
+//		$("input").val("");
+//		$("input").focus();	
+	    $("input").val("").focus();
+	});
+});
+		</script>
+	</head>
+	<body>
+		이름：<input type="text">
+		<button id="con"> 확인 </button> 
+		<button id="cancel"> 클리어</button>
+		
+	</body>
+</html>

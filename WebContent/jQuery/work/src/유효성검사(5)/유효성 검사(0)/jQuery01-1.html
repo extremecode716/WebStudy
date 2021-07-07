@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>jQuery연습</title>
+	<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script>
+
+//function sendGuest() {
+
+$(document).ready(function(){
+
+ $("form").submit(function(){
+
+	var name=$.trim($("#name").val());
+	var content=$.trim($("#content").val());
+	
+	if(name == "") {
+		alert("이름 !!");
+		$("#name").focus();
+		return false;
+	}
+
+	if(content == "") {
+		alert("내용 !!");
+		$("#content").focus();
+		return false;
+	}
+	
+ }); // submit();
+
+});  // ready();
+
+//}
+
+</script>
+
+</head>
+<body>
+<!--
+<form onSubmit="return sendGuest()" name=myform method=post action=send.jsp>
+-->
+<form method=post action=send.jsp>
+<table width="500" border="1" align=center>
+	<tr height="50">
+		<td align="center"><b>방명록</b></td>
+	</tr>
+</table>
+<br>
+<table width="500" border="1" align=center>
+	<tr height="25">
+		<td align="center" width="100">작성자</td>
+		<td align="left">
+		    <input type="text" id="name" name="name">
+		</td>
+	</tr>
+	<tr height="70">
+		<td align="center" width="100">내용</td>
+		<td align="left">
+		    <textarea rows="6" cols="50" id="content"		name="content"></textarea>
+		</td>
+	</tr>
+</table>
+<table width="500" border="0" align=center>
+	<tr height="25">
+		<td align="center">
+		<input type="submit" value="등록하기">
+		<input type=reset value="취소">
+		</td>
+	</tr>
+</table>
+
+</form>
+</body>
+</html>

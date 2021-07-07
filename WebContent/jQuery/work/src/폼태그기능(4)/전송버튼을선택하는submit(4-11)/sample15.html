@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample15</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+
+		$(":submit").mouseover(function() {
+			$(this).after("<p>입력한 내용을 서버로 전송합니다.</p>");
+		}).mouseout(function() {
+			$("p").remove();
+		});
+
+	});
+</script>
+</head>
+<body>
+	<dl>
+		<dt>
+			이름<em>(필수)</em>
+		</dt>
+		<dd>
+			<input type="text" name="name" />
+		</dd>
+
+		<dt>코멘트</dt>
+		<dd>
+			<textarea name="comment"></textarea>
+		</dd>
+
+		<dd>
+			<input type="submit" value="전송" />
+		</dd>
+	</dl>
+
+</body>
+</html>

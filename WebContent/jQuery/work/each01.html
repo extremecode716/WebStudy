@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열을 반복 처리하기</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+  $(function() {
+    var list = ['Jessica', 'Tiffany', 'Sunny', 'crystal', 'G.NA']
+  
+    $.each(list, function(index, value) {
+    	alert(index+":"+value);
+		$('ol').append('<li>'+value+'</li>');
+	});   
+    
+  });
+</script>
+</head>
+<body>
+  <ol>
+  </ol>
+</body>
+</html>

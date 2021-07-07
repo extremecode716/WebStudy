@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample4</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+// focus 이벤트가 발생될 때 한 번만 명령을 실행하는 one()을 사용한 스크립트.
+
+$(function(){
+	$("input").val(" 입력해 주세요").css("color","#CCC").one("focus",function(){
+		$(this).val("").css("color","#000");
+	});
+});
+
+		</script>
+	</head>
+	<body>
+		이름：<input type="text" value="" />
+	</body>
+</html>

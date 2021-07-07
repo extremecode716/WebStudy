@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample5</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	// blur()는 focus()와 반대로 폼 태그에서 포커스가 벗어났을 때 
+	// 감지하고 명령을 실행한다.
+	// 
+
+	// $(셀렉터).blur(function(){
+	//		셀렉터로 지정한 태그에서 포커스가 벗어났을 경우에 
+	//		실행될 문자
+	// });
+
+	$(function() {
+
+		$("input").val("입력해 주세요").css("color", "#CCC").one("focus", function() {
+			$(this).val("").css("color", "#000");
+		});
+
+		$("input").blur(
+				function() {
+					if ($(this).val() == "") {
+						$(this).val("입력해 주세요").css("color", "#CCC").one(
+								"focus", function() {
+									$(this).val("").css("color", "#000");
+								});
+					}
+				});
+
+	});
+</script>
+</head>
+<body>
+	이름：
+	<input type="text" value="" />
+</body>
+</html>

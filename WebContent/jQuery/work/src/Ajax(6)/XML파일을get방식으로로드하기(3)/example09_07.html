@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>XML 파일을 GET 방식으로 로드하기</title>
+<style>
+td { border: 1px solid gray;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+/*
+	- $.get() 함수를 이용해서 item.xml 파일을 불러온다.
+    - $.get() 함수의 첫번째 매개변수에는 서버의 URL 주소를 지정한다.
+	- $.get() 함수의 두번째 매개변수인 콜백함수를 이용해서 서버에서 보내온 XML 형식의 데이터를 data 로 받늗다.
+*/
+
+$(function() {
+	 $.get('item.xml', function(data) {
+//		 		alert(data);
+             $("#treeData").append(
+                    "<tr><td>id</td>" + "<td>name</td>" 
+                  + "<td>price</td>" + "<td>description</td>" + "</tr>");
+             $(data).find('item').each(function() {			// 서버에서 얻어온 데이터에서 셀렉터로 item태그를 찾는다.
+            	 var $item = $(this);						   // 6개의 item태그중 현재 처리중인 item태그를 this로 접근한후에 이를
+                 $("#treeData").append("<tr>" + "<td>"        // this로 접근한 후에 이를 $(this)를 사용하여 jQuery객체를        
+                         + $item.attr("id") + "</td>" + "<td>" //생성함  
+                         + $item.attr("name") + "</td>" + "<td align='right'>"
+                         + $item.find("price").text() + "</td>" + "<td>"
+                         + $item.find("description").text() + "</td>" + "</tr>");
+             });
+    });
+});
+</script>
+</head>
+<body>
+  <table id="treeData"></table>
+</body>
+</html>
+
+

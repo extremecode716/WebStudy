@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample5</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	// blur()는 focus()와 반대로 폼 태그에서 포커스가 벗어났을 때 
+	// 감지하고 명령을 실행한다.
+	// 
+
+	// $(셀렉터).blur(function(){
+	//		셀렉터로 지정한 태그에서 포커스가 벗어났을 경우에 
+	//		실행될 문자
+	// });
+
+	$(function() {
+
+		$("#id").focus(function() { // 아이디
+			$("#id").val("");
+		}).blur(function() {
+			$("#id").val("아이디");
+		});
+
+		$("#pass").focus(function() {// 비밀번호
+			$("#pass").val("");
+		}).blur(function() {
+			$("#pass").val("비밀번호");
+		});
+
+	});
+</script>
+</head>
+<body>
+	ID：
+	<input type="text" id="id" value="아이디">
+	<br> 비밀번호:
+	<input type="text" id="pass" value="비밀번호">
+	<br>
+	<!--<input type=text placeholder="입력">-->
+</body>
+</html>

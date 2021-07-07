@@ -1,0 +1,22 @@
+* 하이퍼링크의 기능 무효화 방법
+   : 하이퍼링크가 설정된 내용이 실행되지 않고 jQuery만 실행하는 방법
+
+방법1.  
+	javascript:void(0) 사용
+
+          <a href="javascript:void(0)"> 화면을 변경 </a>
+		  <a href="#"> 화면을 변경 </a>
+
+
+방법2.
+	return false; 사용
+
+            $(function(){
+		$("a").click(function(){
+			$("img").attr("src","sea.jpg").
+				attr("title","바다");
+			return false;
+		});
+	});
+
+     

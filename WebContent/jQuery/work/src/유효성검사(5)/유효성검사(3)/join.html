@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 회원가입</title>
+<style type="text/css">
+#jointable table {
+	width: 600px;
+}
+
+#jointable th {
+	text-align: right;
+	background-color: orange;
+}
+
+#jointable td input {
+	border: 1px solid seagreen;
+}
+</style>
+
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+
+				$("form").submit(
+						function() {
+
+							var tel1_pattern = /(^01[016789]$)/; //정규식
+
+							if ($("#id").val() == "") {
+								alert("아이디를 입력하세요!");
+								$("#id").focus();
+								return false;
+							} else if ($("#pwd").val() == "") {
+								alert("비밀번호를 입력하세요!");
+								$("#pwd").focus();
+								return false;
+							} else if ($("#pwd2").val() == "") {
+								alert("비밀번호확인 을  입력하세요!");
+								$("#pwd2").focus();
+								return false;
+							} else if ($("#pwd").val() != $("#pwd2").val()) {
+								alert("비밀번호와 비밀번호 확인이 일치하지않습니다.");
+								$("#pwd").val("");
+								$("#pwd2").val("");
+								$("#pwd").focus();
+								return false;
+							} else if ($("#name").val() == "") {
+								alert("이름을  입력하세요!");
+								$("#name").focus();
+								return false;
+							} else if ($("#tel1").val() == "") {
+								alert("전화번호 첫번째자리 입력하세요!");
+								$("#tel1").focus();
+								return false;
+							} else if ($("#tel1").val().length != 3) {
+								alert("전화1을 3개의 숫자로 입력하세요!");
+								$("#tel1").val("");
+								$("#tel1").focus();
+								return false;
+							} else if (isNaN($("#tel1").val())) {
+								alert("전화1을 3개의 숫자로  입력하세요!");
+								$("#tel1").val("");
+								$("#tel1").focus();
+								return false;
+								// var tel1_pattern = /(^01[016789]$)/;  pattern에 맞지 않으면 - false
+							} else if (!tel1_pattern.test($("#tel1").val())) {
+								alert("010, 011, 016, 017, 018, 019만 가능합니다.")
+								$("#tel1").val("")
+								$("#tel1").focus();
+								return false;
+							} else if ($("#tel2").val() == "") {
+								alert("전화번호 두번째자리를 입력하세요!");
+								$("#tel2").focus();
+								return false;
+							} else if ($("#tel2").val().length != 4) {
+								alert("전화1을 4개의 숫자로 입력하세요!");
+								$("#tel2").val("");
+								$("#tel2").focus();
+								return false;
+							} else if (isNaN($("#tel2").val())) {
+								alert("전화2을 3~4개의 숫자로 입력하세요!");
+								$("#tel2").val("");
+								$("#tel2").focus();
+								return false;
+							}
+							/*			
+							 else if($("#tel2").val() == "" || 
+							 $("#tel2").val().length > 4 ||				       isNaN($("#tel2").val())) {
+
+
+							 //                alert("okkkkkkk");
+							 /*
+							 var pattern = /(^01[016789]$)/; //정규식 슬래쉬(/)로 시작해서, 슬래쉬(/)로 끝났다.
+							 var tel1 = $("#tel2").val();
+							 if (!pattern.test(tel1)) {
+							 //틀리면
+							 alert("010, 011, 016, 017, 018, 019,o19만 가능합니다.")
+							 $("#te2").val("")
+							 $("#te2").focus();
+
+							 }
+							 */
+							//            }
+							else if ($("#tel3").val() == "") {
+								alert("전화번호 세번째자리를 입력하세요!");
+								$("#tel3").focus();
+								return false;
+							} else if ($("#tel3").val().length != 4) {
+								alert("전화1을 4개의 숫자로 입력하세요!");
+								$("#tel3").val("");
+								$("#tel3").focus();
+								return false;
+							} else if (isNaN($("#tel3").val())) {
+								alert("전화2을 3~4개의 숫자로  입력하세요!");
+								$("#tel3").val("");
+								$("#tel3").focus();
+								return false;
+							} else if ($("#addr").val() == "") {
+								alert("주소를  입력하세요!");
+								$("#addr").focus();
+								return false;
+							} else if ($("#job").val() == "") {
+								alert("직업을  선택하세요!");
+								$("#job").focus();
+								return false;
+							} else if ($("#man").is(':checked') == false
+									&& $("#woman").is(':checked') == false) {
+								alert("남자또는 여자를  선택하세요!");
+								return false;
+							} else if ($("#email").val() == "") {
+								alert("이메일을 입력하세요!");
+								$("#email").focus();
+								return false;
+							} else if ($("#intro").val() == "") {
+								alert("자기소개를  입력하세요!");
+								$("#intro").focus();
+								return false;
+							} else {
+								alert("ok");
+
+								//				$("form").submit();
+							}
+
+						}); // click() end
+
+			}); // ready() end
+</script>
+</head>
+
+<body>
+	<h1>회원 가입</h1>
+
+	<form action="send.jsp" method=post>
+
+		<table id="jointable">
+			<tr>
+				<th>아이디</th>
+				<td>
+					<input type="text" name="id" id="id" size="12" maxlength="12" />
+				</td>
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td>
+					<input type="password" name="pwd" id="pwd" size="12" maxlength="12" />
+				</td>
+			</tr>
+			<tr>
+				<th>비밀번호확인</th>
+				<td>
+					<input type="password" name="pwd2" id="pwd2" size="12" maxlength="12" />
+				</td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name" id="name" size="12" maxlength="12" />
+				</td>
+			</tr>
+			<tr>
+				<th>전화번호</th>
+				<td>
+					<input type="text" name="tel1" id="tel1" size="3" maxlength="3" />
+					-
+					<input type="text" name="tel2" id="tel2" size="4" maxlength="4" />
+					-
+					<input type="text" name="tel3" id="tel3" size="4" maxlength="4" />
+				</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>
+					<input type="text" name="addr" id="addr" maxlength="100" />
+				</td>
+			</tr>
+			<tr>
+				<th>직업</th>
+				<td>
+
+					<select id="job">
+						<option value="">------
+						<option value="학생">학생
+						<option value="직장인">직장인
+						<option value="자영업">자영업
+						<option value="주부">주부
+					</select>
+
+				</td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<input type="radio" id="man" name="gender" value="M">
+					남자
+					<input type="radio" id="woman" name="gender" value="W">
+					여자
+				</td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td>
+					<input type="text" name="email" id="email" size="50" maxlength="50" />
+				</td>
+			</tr>
+			<tr>
+				<th>자기소개</th>
+				<td>
+					<textarea rows="5" cols="40" id="intro" name="intro"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align=center>
+					<input type="submit" id="btn_join" value="가입">
+					<input type="reset" id="btn_cancel" value="취소">
+				</td>
+			</tr>
+		</table>
+
+
+	</form>
+
+</body>
+</html>
+
+<!--
+
+1. isNaN() 함수
+	isNaN() 함수는 숫자인지 아닌지를 판단하고 true/false 를 리턴함.
+	isNaN('a') -- true 리턴.(문자)
+	isNaN('123') --- false 리턴.(숫자)
+	cf.isNaN 은 Not a Number 의 약자. 
+
+	if(isNaN(document.myform.tel1.value){
+		alert("숫자만 입력 하세요");
+	}
+    if(isNaN($("#tel1").val())){
+		alert("숫자만 입력 하세요");
+	}
+
+2. test() 함수
+	test() 함수는 정규식과 비교하여 포함되면 true 반환, 포함되지 않으면 false 반환
+	pattern에 맞으면 - true
+    pattern에 맞지 않으면 - false
+
+3. is() 함수
+   is() 함수는 값의 유형을 검사하고 그 결과에 따라 true 또는 false를 반환함
+   
+   라디오 버튼이나 체크박스가 체크되면 true를 반환하고, 체크되지 않으면 false를 반환함.
+
+-->

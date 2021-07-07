@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample17</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	// 실행한 시점에 존재하는 태그와 더불어 앞으로 추가될 태그에도 이벤트 처리를
+	// 설정할 수 있는 명령어가 live() 입니다.
+
+	// live 이벤트로 처리
+
+	$(function() {
+
+		$("a").live(
+				"click",
+				function() {
+					$("img").attr("src", $(this).attr("href")).attr("title",
+							$(this).text());
+					return false;
+				});
+
+		$("button").click(function() {
+			$("ul").append("<li><a href='Building.jpg'>건물</a></li>");
+		});
+	});
+</script>
+</head>
+<body>
+	<button>li 요소를 추가</button>
+
+	<ul>
+		<li><a href="flower.jpg"> 꽃</a></li>
+		<li><a href="sea.jpg"> 바다</a></li>
+		<li><a href="jellyfish.jpg"> 해파리</a></li>
+	</ul>
+
+	<p>
+		<img src="flower.jpg" title=" 꽃" />
+	</p>
+</body>
+</html>

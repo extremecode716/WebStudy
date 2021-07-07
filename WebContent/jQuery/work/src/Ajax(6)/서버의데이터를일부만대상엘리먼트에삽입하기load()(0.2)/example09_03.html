@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>서버의 데이터를 대상 엘리먼트에 삽입하기</title>
+<style type="text/css">
+div {
+	width: 180px;
+	height: 80px;
+	margin: 3px;
+	float: left;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.11.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+	/*
+	 - jQuery에서 제공해주는 load()함수를 사용해서 서버의 menu.html 페이지의 데이터를 가져와서 특정 엘리먼트에 추가한다.
+	 */
+	$(function() {
+		$('#menu1').click(function() {
+			$('#message1').load('menu.html'); // load()함수를 이용해서 menu.html 문서전체를 로드하여 id가 message1인
+			return false; // 엘리먼트에 추가한다. // 앵커태그를 실행 시키지 않는다.
+		});
+
+		$('#menu2').click(function() {
+			$('#message2').load('menu.html li'); // load()함수를 이용해서 menu.html 문서의 내용중 li 엘리먼트만 읽어서 id가
+			return false; // message2인 엘리먼트에 추가한다.
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<a href="#" id="menu1">메뉴 보기 1</a>
+		<p>
+			<span id="message1"></span>
+		</p>
+	</div>
+	<div>
+		<a href="#" id="menu2">메뉴 보기 2</a>
+		<p>
+			<span id="message2"></span>
+		</p>
+	</div>
+</body>
+</html>

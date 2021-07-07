@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"> 
+  <title>폼 연습</title>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <!-- 회원가입 유효성 검사(name)
+  <script src="member.js"></script>-->
+ 
+  <!-- 회원가입 유효성 검사(id)
+  <script src="member1.js"></script>-->
+
+  <!-- jQuery로 유효성 검사 -->
+  <script src="member2.js"></script>
+
+ </head>
+ <body>
+<h1> 회원가입폼</h1>
+
+<form onSubmit="return check()" name=myform method=post action=send.jsp>
+
+ID: <input type=text size=20 name=id id=id>
+    <input type=button value="중복검사"
+		   onClick="idcheck()"><br><br>
+
+비밀번호:<input type=password size=20							name=pass id=pass><br><br>
+주민번호:<input type=text size=6 maxlength=6					name=jumin1 id=jumin1>-
+         <input type=text size=7 maxlength=7 name=jumin2 id=jumin2><br><br>
+E-Mail:<input type=text name=email01 id=email01>@
+       <input type=text name=email02 id=email02>
+	   <select name=sel id=sel onChange="move()">
+			<option>직접선택</option>
+			<option>naver.com</option>
+			<option>gmail.com</option>
+			<option>daum.net</option>
+			<option>nate.com</option>
+	   </select><br><br>
+성별:<input type=radio name=gender id=male value=m>남자
+     <input type=radio name=gender id=female value=f>여자<br><br>
+취미:<input type=checkbox name=hobby id=h1>게임
+	 <input type=checkbox name=hobby id=h2>공부
+	 <input type=checkbox name=hobby id=h3>등산
+	 <input type=checkbox name=hobby id=h4>스포츠
+	 <input type=checkbox name=hobby id=h5>낚시<br><br>
+
+우편번호:<input type=text size=3 maxlength=3 name=post1						id=post1>-
+		 <input type=text size=3 maxlength=3 name=post2				id=post2>
+		 <input type=button 
+		 value="우편검색" onClick="postcode()"><br><br>
+
+주소:<input type=text size=50 name=address id=address><br><br>
+자기소개:<textarea rows=10 cols=40										name=intro id=intro></textarea><br><br>
+
+<input type=submit value="회원가입">
+<input type=reset value="취소">
+
+</form>
+  
+ </body>
+</html>

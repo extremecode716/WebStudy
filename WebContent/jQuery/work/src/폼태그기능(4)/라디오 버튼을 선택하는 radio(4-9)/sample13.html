@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample13</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+
+$(function(){
+	$(":radio").change(function(){
+		$("label").css("font-weight","");
+		$("label[for='"+$(this).attr("id")+"']").css("font-weight","bold");
+	});
+});
+
+		</script>
+	</head>
+	<body>
+
+		성별:
+		<input type="radio" name="gender" value="남자" id="gender_man" />
+		<label for="gender_man"> 남자</label>
+		<input type="radio" name="gender" value="여자" id="gender_woman" />
+		<label for="gender_woman"> 여자</label>
+	</body>
+</html>

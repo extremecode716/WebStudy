@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample1</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+// text()메소드의 괄호안에 아무것도 기술하지 않은 경우에는, 
+// 셀렉터로 지정한 태그에 포함되어 있는 텍스트를 가져온다.
+ 
+
+// text()메소드의 괄호안에 값이 설정되어 있을 경우에는 
+// 셀렉터(button)의 value값을 설정하게 된다.
+// (이벤트가 발생되기 전에는 "확인" 버튼 이지만,
+// clik이벤트가 발생한 뒤에는 "전송" 버튼으로 변경됨)
+
+// val()메소드는 괄호안에 아무것도 기술하지 않고 사용하면, 
+// 폼 태그에 입력되어 있는 텍스트나 선택되어 있는 값을 가져온다.
+
+// 셀렉터로 input태그를 지정하면 val()은 폼 태그의 종류를 
+// 결정하는 type속성에 상관없이 모든 input 태그의 value속성값을 
+//  가져온다.
+ 
+
+$(function(){
+
+	$("#con").click(function(){  // 확인
+//		$("p").text($("input").val()+"로 메일을 전송합니다.");
+		alert($("input").val());
+		$("#con").text("전송");//확인->전송
+//		$("#re").text("cancel");//취소->cancel
+		$("#re").hide();
+	});
+
+	$("#re").click(function(){	// 취소
+//		$("input").val("");
+//		$("input").focus();
+		$("input").val("").focus();
+	});
+
+});
+		</script>
+	</head>
+	<body>
+		<p>E-mail 주소：
+		<input type="text" name="name" /></p>
+		<button id="con">확인</button>
+		<button id="re">취소</button>
+	</body>
+</html>

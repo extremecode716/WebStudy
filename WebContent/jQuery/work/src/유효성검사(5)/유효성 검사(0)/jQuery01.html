@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery연습</title>
+
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+
+<script>
+
+$(document).ready(function(){	
+	
+//    $("form").submit(function(){
+	  $("#myform").submit(function(){	
+
+//	function check() {
+		var id = $.trim($("#id").val());//jQuery를 이용하여 앞뒤 공백 제거 
+		if (id == "") {
+//		if($.trim($("#id").val()) == ""){
+			alert("ID를 입력 하세요?");
+			$("#id").focus();
+			return false;
+		}
+//	}
+
+	}); // submit() end
+}); // ready() end
+
+</script>
+
+</head>
+<body>
+	<form id=myform name=myform method=post action=send.jsp>
+		<table border=1 align=center>
+			<tr>
+				<td>ID</td>
+				<td><input type=text id="id" name="id" size=20></td>
+			</tr>
+			<tr>
+				<td align=center colspan=2>
+				<input type=submit value="가입"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample19</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+
+		$(":file").mouseover(function() {
+			$(this).after("<p>업로드 가능한 파일은 300kb까지 입니다</p>")
+		}).mouseout(function() {
+			$("p").remove();
+		});
+
+	});
+</script>
+</head>
+<body>
+	사진：
+	<input type="file">
+	<br>
+	<input type="file">
+</body>
+</html>

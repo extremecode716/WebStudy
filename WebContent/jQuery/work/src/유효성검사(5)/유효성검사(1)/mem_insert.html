@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 폼</title>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+
+$(document).ready(function(){
+
+   $("form").submit(function(){
+
+// function check(){
+	 if($.trim($("#id").val())==""){
+		 alert("아이디를 입력하세요!");
+		 $("#id").val("").focus();
+		 return false;
+	 }	
+	 if($.trim($("#pwd").val())==""){
+		 alert("비밀번호를 입력하세요!");
+		 $("#pwd").val("").focus();
+		 return false;
+	 }
+	 if($.trim($("#name").val())==""){
+		 alert("이름을 입력하세요!");
+		 $("#name").val("").focus();
+		 return false;
+	 }
+	 if($.trim($("#addr").val())==""){
+		 alert("주소를 입력하세요!");
+		 $("#addr").val("").focus();
+		 return false;
+	 }
+	 if($.trim($("#intro").val()) == ""){
+		 alert("자기 소개를 입력 하세요!");
+		 $("#intro").focus();
+		 return false;
+	 }
+// }
+	
+   }); // submit() end
+
+}); // ready() end
+
+</script>
+</head>
+<body>
+<!--
+ <form method="post" action="mem_ok.jsp" 
+	   onsubmit="return check()">
+-->
+<form method="post" action="mem_ok.jsp">
+  <table align="center" border="1">
+    <tr>
+     <th>아이디</th>
+     <td><input name="id" id="id" size="14" /></td>
+    </tr>
+    
+    <tr>
+      <th>비밀번호</th>
+      <td><input type="password" name="pwd"			id="pwd" size="14" /></td>
+    </tr>
+    
+    <tr>
+      <th>회원이름</th>
+      <td>
+       <input name="name" id="name" size="20" />
+      </td>
+    </tr>
+    
+    <tr>
+      <th>회원주소</th>
+      <td>
+       <input name="addr" id="addr" size="30" />
+      </td>
+    </tr>
+
+	<tr>
+      <th>자기소개</th>
+      <td>
+       <textarea name="intro" rows=5 cols=25 id="intro"></textarea>
+      </td>
+    </tr>
+    
+    <tr>
+     <th colspan="2">
+     <input type="submit" value="저장" />&nbsp;
+     <input type="reset" value="취소" onclick="$('#id').focus()" />
+     </th>
+    </tr>
+  </table>
+ </form>
+</body>
+</html>

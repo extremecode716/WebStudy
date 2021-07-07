@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample1</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script>
+	jQuery(document).ready(
+			function() {
+				//		$(function(){
+				// $("input")
+				// $("input:button")
+				// $(":button")
+				// $('input[type=button]')
+				// $("#b1")
+				$("#b1").click(
+						function() {
+							$("img").attr("src", "sea.jpg").attr("title", "바다")
+									.attr("width", 150).attr("height", 150);
+							alert("그림이 바꼈습니다.");
+						});
+
+			});
+</script>
+</head>
+<body>
+	<!--
+    <button>화면을 변경</button>
+	<button type="button">화면을 변경</button>-->
+	<input type=button value="화면을 변경" id="b1">
+
+	<p>
+		<img src="flower.jpg" title="꽃" />
+	</p>
+
+</body>
+</html>

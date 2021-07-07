@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample18</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+
+		$("button").click(function() {
+
+			if ($("#mail").val() == "") {
+				alert("메일 주소를 입력하세요");
+				$("#mail").focus();
+				return false;
+			}
+			if ($("#check").val() == "") {
+				alert("메일주소확인을 입력 하세요");
+				$("#check").focus();
+				return false;
+			}
+			if ($("#mail").val() != $("#check").val()) {
+				//			 $("em").text("메일 주소가 동일하지 않습니다.");
+				alert("메일주소가 동일 하지 않습니다.");
+				$("#check").val("");
+				$("#check").focus();
+				return false;
+			}
+		});
+
+	});
+</script>
+</head>
+<body>
+	<form action="check.html">
+		<dl>
+			<dt>메일주소</dt>
+			<dd>
+				<input type="text" name="mail" id="mail" />
+			</dd>
+
+			<dt>
+				메일주소<em>(확인)</em>
+			</dt>
+			<dd>
+				<input type="text" name="check" id="check" />
+			</dd>
+			<dd>
+				<button>확인</button>
+				<input type=reset value="취소">
+			</dd>
+		</dl>
+	</form>
+
+</body>
+</html>

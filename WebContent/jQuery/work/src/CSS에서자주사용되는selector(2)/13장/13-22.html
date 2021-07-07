@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+	// input type=text인 선택자의 value속성값을 'Hello jQuery..!' 로 설정
+        $(document).ready(function () {
+            $(':text').val('Hello jQuery..!');
+        });
+		$(document).ready(function () {
+            $('input[type="password"]').val('pass!');
+        });
+    </script>
+</head>
+<body>
+    <input type="text">
+    <input type="password" />
+    <input type="radio" />
+    <input type="checkbox" />
+    <input type="file" />
+</body>
+</html>

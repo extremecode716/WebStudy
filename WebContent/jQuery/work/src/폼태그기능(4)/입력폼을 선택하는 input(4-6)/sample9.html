@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample9</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+// :input은 입력 폼 태그 전부(input, textarea,select, button)를 
+// 한번에 선택 할 수 있는 필터
+
+
+$(function(){
+
+	$(":input").focus(function(){
+		$(this).css("background","#DFEEFF");
+	}).blur(function(){
+		$(this).css("background","yellow");
+	});
+
+});
+
+		</script>
+	</head>
+	<body>
+		<dl>
+			<dt> 이름<em>(필수)</em></dt>
+			<dd><input type="text" name="name" /></dd>
+			<dt> 연령</dt>
+			<dd>
+				<select name="age">
+					<option> 선택해주세요</option>
+					<option value="10대">10대</option>
+					<option value="20대">20대</option>
+					<option value="30대">30대</option>
+					<option value="40대이상">40대이상</option>
+				</select>
+			</dd>
+			<dt> 코멘트</dt>
+			<dd>
+				<textarea name="comment"></textarea>
+			</dd>
+		</dl>
+		<input type="reset" value="리셋" />
+		<input type="submit" value="전송" />
+		<button>확인</button>
+	</body>
+</html>

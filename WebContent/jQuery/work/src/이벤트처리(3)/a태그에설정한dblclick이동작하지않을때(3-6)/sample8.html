@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample8</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	// a 태그에 설정한 dblclick()이 동작하지 않을 경우
+
+	// a 태그에 dblclick()를 설정한 경우에는 더블 클릭(dblclick())시에는 실행하고 
+	// 싶은 처리를 하고, 클릭(click())시에는 return false; 를 설정해서 링크를
+	// 무효화 시킨다.
+
+	$(function() {
+		/*	
+		 $("a").dblclick(function(){
+		 $("img").attr("src",$(this).attr("href"))
+		 .attr("title",$(this).text());
+		 });
+		 */
+
+		$("a").dblclick(
+				function() {
+					$("img").attr("src", $(this).attr("href")).attr("title",
+							$(this).text());
+				}).click(function() { // click을 먼저 막는다.
+			return false;
+		});
+
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li><a href="flower.jpg">꽃</a></li>
+		<li><a href="sea.jpg">바다</a></li>
+		<li><a href="Jellyfish.jpg">해파리</a></li>
+		<li><a href="building.jpg">건물</a></li>
+
+	</ul>
+	<p>
+		<img src="flower.jpg" title="꽃" />
+	</p>
+
+</body>
+</html>

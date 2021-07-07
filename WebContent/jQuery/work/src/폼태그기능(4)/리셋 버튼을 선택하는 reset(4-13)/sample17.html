@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample17</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+
+$(function(){
+
+	$(":reset").one("click",function(){
+//	$(":reset").click(function(){
+		$(this).after("<p>입력 내용을 초기화 합니다.</p>");
+	});
+
+});
+
+		</script>
+	</head>
+	<body>
+<form action="">
+	<dl>
+		<dt>이름<em>(필수)</em></dt>
+		<dd><input type="text" name="name" /></dd>
+
+		<dt>코멘트</dt>
+		<dd>
+			<textarea name="comment"></textarea>
+		</dd>
+		<dd><input type="reset" src="button.jpg" alt="재설정" value="재설정" /></dd>
+	</dl>
+</form>
+	</body>
+</html>

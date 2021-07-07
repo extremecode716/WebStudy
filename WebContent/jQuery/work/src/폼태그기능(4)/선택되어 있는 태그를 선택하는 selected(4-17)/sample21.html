@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample21</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+// 연령을 "10대" 로 선택하면 "좋아하는 술" 입력란이 입력 불가 상태가 됨
+
+$(function(){
+
+	$("select").change(function(){
+		if($(":selected").attr("value")=="10 대"){
+			$("input").attr("disabled", "disabled");
+//			$("input").attr("disabled", "false");
+		}else{
+			$("input").removeAttr("disabled");
+		}
+	});
+
+});
+
+		</script>
+	</head>
+	<body>
+<p> 나이：
+<select name="age">
+<option value=" 선택해주세요"> 선택해주세요</option>
+<option value="10 대">10 대</option>
+<option value="20 대">20 대</option>
+<option value="30 대">30 대</option>
+<option value="40 대이상">40 대이상</option>
+</select></p>
+<p> 좋아하는 술：<input type="text" /></p>
+
+	</body>
+</html>

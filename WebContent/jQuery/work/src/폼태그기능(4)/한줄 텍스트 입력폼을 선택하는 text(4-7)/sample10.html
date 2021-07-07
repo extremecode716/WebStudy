@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+		<title>sample10</title>
+		<script src="jquery-1.6.4.min.js"></script>
+
+		<script type="text/javascript">
+// :text는 type 속성값에 "text"가 설정되어 있는 input태그만을 
+//  선택하는 필터
+
+// 한줄 입력 폼이 포커스 되면 strong태그 안에 있는 내용을 HTML을 
+// 추가하고, 포커스가 사라지면 추가했던 strong태그를 제거 합니다.
+
+
+$(function(){
+
+	$(":text").focus(function(){
+		$(this).after("<strong>필수 항목 입니다</strong>");
+	}).blur(function(){
+		$("strong").remove();
+	});
+
+});
+
+		</script>
+	</head>
+	<body>
+		이름：<input type="text" name="name" />
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample13</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	// img태그 위에 마우스포인터가 움직이는 경우에 마우스 포인터의 x좌표와 y좌표를
+	// p태그에 출력하는 스크립트.
+
+	$(function() {
+
+		$("img").mousemove(
+				function(e) {
+					// text 함수도 출력용인데 html와 다르게 <br>태그들이 동작한다.
+					$("p").html( 
+							"현재 X좌표:" + e.clientX + "<br>				 현재 Y좌표:"
+									+ e.clientY);
+					/* $("p").text( 
+							"<br>현재 X좌표:" + e.clientX + "<br>				 현재 Y좌표:"
+									+ e.clientY); */
+				});
+
+	});
+</script>
+</head>
+<body>
+	<img src="flower.jpg" title="꽃" />
+	<p></p>
+</body>
+</html>

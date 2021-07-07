@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sample12</title>
+<script src="jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		//		$(function(){
+
+		$("img").mouseover(function() {
+			$(this).attr("src", "sea.jpg").attr("title", "바다");
+			$("body").css("background", "yellow");
+			console.log('asd');
+		}).mouseout(function() {
+			$(this).attr("src", "flower.jpg").attr("title", "꽃");
+			$("body").css("background", "green");
+		});
+
+	});
+</script>
+</head>
+<body>
+
+	<img src="flower.jpg" title="꽃" />
+
+</body>
+</html>
